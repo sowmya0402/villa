@@ -12,16 +12,165 @@
     body {
       font-family: Arial, sans-serif;
     }
-    /* Top bar */
-    .top-bar {
-      background: #f8f8f8;
-      font-size: 14px;
-      padding: 8px 0;
+   /* Social icon styling */
+    .social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        background-color: var(--icon-grey-bg);
+        border-radius: 50%;
+        color: white;
+        font-size: 14px;
+        transition: background-color 0.3s;
+        text-decoration: none;
     }
-    .top-bar i {
-      margin-right: 6px;
-      color: #ff5a3c;
+    .social-link:hover {
+        background-color: var(--brand-orange);
+        color: white;
     }
+
+    /* Schedule a visit button */
+    .visit-btn {
+        display: inline-flex;
+        align-items: center;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        overflow: hidden;
+        padding: 0;
+        text-decoration: none;
+    }
+    .visit-btn-icon {
+        background-color: var(--brand-orange);
+        color: white;
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    .visit-btn-text {
+        padding: 8px 15px;
+        font-weight: 500;
+    }
+    .visit-btn:hover .visit-btn-icon {
+        background-color: var(--brand-orange-dark);
+       
+    }
+     :root {
+        --brand-orange: #f15a24;
+        --brand-orange-dark: #d84e1f;
+        --icon-grey-bg: #d3d3d3;
+    }
+    .nav-link:hover{
+        color: #f15a24;
+    }
+      /* Schedule a visit button */
+   
+.schedule-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 5px 10px;
+    font-family: Arial, sans-serif;
+    border: none;
+    cursor: pointer;
+  }
+
+  .icon-circle {
+    background-color: #ff3c20;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    position: relative;
+    left: -10px;
+  }
+
+  /* Calendar box */
+  .calendar {
+    width: 14px;
+    height: 12px;
+    background-color: white;
+    border-radius: 2px;
+    position: relative;
+  }
+
+  /* Calendar top bar */
+  .calendar::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    border-radius: 2px 2px 0 0;
+  }
+
+  /* Calendar rings */
+  .calendar::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 3px;
+    width: 8px;
+    height: 2px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid transparent;
+  }
+
+
+  .properties-section {
+  display: block; 
+  width: 100%;
+  text-align: center;
+  margin: 40px auto;
+}
+
+.properties-header {
+  margin-bottom: 30px;
+}
+
+.properties-header h4 {
+  color: crimson;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.properties-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.properties-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+
+}
+
+   .property-card {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        background-color: #fff;
+        padding: 15px;
+        
+    }
+
     /* Navbar */
     .navbar-nav .nav-link {
       font-weight: 500;
@@ -109,21 +258,23 @@
 </head>
 <body>
 
-  <!-- Top bar -->
-  <div class="top-bar">
-    <div class="container d-flex justify-content-between">
-      <div>
-        <i class="fa fa-envelope"></i> info@company.com
-        &nbsp;&nbsp;
-        <i class="fa fa-map-marker-alt"></i> Sunny Isles Beach, Fl 33160
-      </div>
-      <div>
-        <i class="fab fa-facebook-f me-3"></i>
-        <i class="fab fa-twitter me-3"></i>
-        <i class="fab fa-linkedin-in"></i>
-      </div>
+  <!-- Top Bar -->
+<div class="top-bar bg-white border-bottom py-1 small">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap">
+    <div class="contact-info">
+      <i class="fa-solid fa-envelope me-1" style="color: var(--brand-orange)"></i> info@company.com
+      <span class="ms-4">
+       <i class="fa-solid fa-map fa-lg me-1" style="color: var(--brand-orange)"></i> Sunny Isles Beach, FL 33160 
+      </span>
+    </div>
+    <div class="mt-2 mt-sm-0">
+     <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
     </div>
   </div>
+</div>
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
