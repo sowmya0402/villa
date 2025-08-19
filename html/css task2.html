@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Webpage Using CSS Selectors</title>
+  <style>
+    /* Element selector */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 20px;
+    }
+
+    /* ID selector */
+    #main-title {
+      color: #2e8b57;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    /* Class selector */
+    .section {
+      padding: 15px;
+      margin: 10px 0;
+      border: 2px dashed #87ceeb;
+      background-color: #ffffff;
+    }
+
+    /* Group selector */
+    h2, p {
+      margin: 10px;
+    }
+
+    /* Descendant selector */
+    .section p {
+      color: #333333;
+    }
+
+    /* Pseudo-class selector */
+    a:hover {
+      color: red;
+      text-decoration: underline;
+    }
+
+    /* Adjacent sibling selector */
+    h2 + p {
+      font-style: italic;
+    }
+
+    /* First-letter pseudo-element */
+    p::first-letter {
+      font-size: 150%;
+      color: #2e8b57;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="main-title">Welcome to My Simple Page</h1>
+
+  <div class="section">
+    <h2>About</h2>
+    <p>This is a simple webpage that demonstrates basic CSS selectors.</p>
+    <p>You can learn a lot using just HTML and CSS selectors.</p>
+  </div>
+
+  <div class="section">
+    <h2>Links</h2>
+    <p>Visit <a href="https://www.w3schools.com" target="_blank">W3Schools</a> to practice HTML and CSS.</p>
+  </div>
+
+</body>
+</html>

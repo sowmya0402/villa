@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Single Property</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#f35525; /* orange */
+      --dark:#1e1e1e;
+      --muted:#777;
+      --light:#f7f7f7;
+    }
+    *{box-sizing:border-box}
+    body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Ubuntu,"Noto Sans",sans-serif;color:#2a2a2a;}
+    a{color:inherit;text-decoration:none}
+
+    /* Top info bar */
+    .topbar{background:#fff;border-bottom:1px solid #eee;font: size 0.9rem}
+    .topbar .info i{font-size:.95rem;margin-right:.35rem;color:var(--brand)}
+    .topbar .sep{display:inline-block;width:1px;height:14px;background:#e6e6e6;margin:0 .85rem;vertical-align:right}
+
+    /* Navbar */
+    .navbar-brand{font-weight:800;letter-spacing:.5px}
+    .nav-link{font-weight:500;padding:1rem .9rem}
+    .nav-link.active{color:var(--brand)!important}
+    .btn-visit{background:var(--brand);color:#fff;border:0;border-radius:2rem;padding:.6rem 1rem;font-weight:600}
+    .btn-visit i{margin-right:.35rem}
+
+    /* Hero */
+    .hero{
+      position:relative;min-height:240px;display:flex;align-items:center;
+      background:url('../nature/banner-01.jpg') center/cover no-repeat;
+      color:#fff;
+    }
+    .hero:before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55)}
+    .hero .container{position:relative}
+    .crumb{background:#fff;color:#111;border-radius:20px;padding:.35rem .9rem;font-size:.8rem;font-weight:600;display:inline-block}
+    .crumb .sep{margin:0 .4rem;color:#bbb}
+    .hero h1{margin-top:12px;font-weight:800;letter-spacing:.5px}
+
+    /* Main */
+    .main-wrap{padding:60px 0}
+    .property-img{border-radius:6px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+    .side-card{background:#fff;border:1px solid #eee;border-radius:12px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.04)}
+    .feature{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed #eee}
+    .feature:last-child{border-bottom:0}
+    .feature i{font-size:28px;color:var(--brand)}
+    .feature h6{margin:0;font-weight:700}
+    .feature small{display:block;color:#a7a7a7;font-size:.8rem;margin-top:2px}
+
+    .badge-type{background:#fbe3db;color:var(--brand);font-weight:700;border-radius:8px;padding:.3rem .6rem;font-size:.8rem}
+
+    .lead-title{font-size:1.1rem;font-weight:700;margin:12px 0 18px}
+
+    .dim-text{color:#666;font-size:.92rem}
+
+    /* Useful links / FAQ look */
+    .card-simple{border:1px solid #eee;border-radius:10px;box-shadow:0 10px 20px rgba(0,0,0,.03)}
+    .faq-item{border-top:1px solid #f0f0f0}
+    .faq-btn{display:flex;justify-content:space-between;align-items:center;width:100%;padding:14px 18px;background:#fff;border:0;font-weight:600}
+
+    /* Best Deal Section */
+    .best-area{background:#fff;padding:70px 0}
+    .section-tag{font-size:.75rem;color:#a0a0a0;font-weight:700;letter-spacing:.1em}
+    .chips .chip{border:1px solid #eee;border-radius:999px;padding:.45rem .9rem;background:#fff}
+    .chips .chip.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+    .stats-card{border:1px solid #eee;border-radius:12px;padding:18px;min-width:220px}
+    .stats-card .row>div{display:flex;justify-content:space-between;padding:12px 10px;border-bottom:1px dashed #eee}
+    .stats-card .row>div:last-child{border-bottom:0}
+    .stats-card .label{color:#9a9a9a;font-size:.9rem}
+    .stats-card .value{font-weight:700}
+
+    .btn-outline-dark.round{border-radius:999px;padding:.6rem 1rem}
+
+    /* Footer */
+    footer{background:#111;color:#bbb;font-size:.9rem;padding:26px 0}
+    footer a{color:#bbb}
+
+    /* Utilities */
+    .shadow-soft{box-shadow:0 12px 24px rgba(0,0,0,.06)}
+    .rounded-2xl{border-radius:20px}
+  </style>
+</head>
+<body>
+  <!-- Top bar -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="info d-flex align-items-center flex-wrap gap-3">
+        <span><i class="bi bi-envelope-fill"></i> info@company.com</span>
+        <span class="sep"></span>
+        <span><i class="bi bi-geo-alt-fill"></i> Sunny Isles Beach, FL 33160</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <i class="bi bi-facebook"></i>
+        <i class="bi bi-twitter-x"></i>
+        <i class="bi bi-instagram"></i>
+        <i class="bi bi-linkedin"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">VILLA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Properties</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Property Details</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-visit d-inline-flex align-items-center" href="#"><i class="bi bi-calendar2-week"></i>Schedule a visit</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container py-5">
+      <div class="crumb">HOME <span class="sep">/</span> SINGLE PROPERTY</div>
+      <h1 class="display-6 fw-bold text-uppercase">Single Property</h1>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main class="main-wrap">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <div class="property-img mb-4">
+            <img src="../nature/banner-02.jpg" class="w-100" alt="Property"/>
+          </div>
+
+          <span class="badge-type">Apartment</span>
+          <div class="lead-title">24 New Street Miami, OR 24560</div>
+
+          <p class="dim-text">
+            Get the <strong>best villa agency</strong> HTML CSS Bootstrap Template for your company website. XYZ provides you the <strong>best service</strong> in the world. Please tell your friends about it. Thank you. Cloud bread kogi bitters pitchfork shoreditch tumblr yr succulents single-origin coffee schlitz enamel pin you probably haven't heard of them ugh hella.
+          </p>
+          <p class="dim-text">
+            When you look for best websites, you can simply type XYZ in any search engine website. In addition, you can type XYZ Digital Marketing, XYZ Corporate Layouts, etc. Master cleanse +1 intelligentsia swag post-ironic, slow-carb chambray knausgaard PBR&B DSA poutine neutra cardigan hoodie pop-up.
+          </p>
+
+          <div class="card-simple p-3 mt-4">
+            <div class="px-2 pt-1 pb-2 fw-semibold" style="color:#f35525">Best useful links ?</div>
+            <div class="faq-item">
+              <button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+                <span>Dolor almesit amet?</span>
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div id="faq1" class="collapse show px-3 pb-3 dim-text">
+                Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doens't eiusmod tempor kinfolk tonx selton crucifix 3 wolf moon bicycle rights keffiyeh snackwave wolf same vice, chillwave vexillologist incididunt ut labore consectetur <em>adipiscing</em> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false">
+                <span>How does the work ?</span>
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div id="faq2" class="collapse px-3 pb-3 dim-text">—</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false">
+                <span>Why is Villa the best ?</span>
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div id="faq3" class="collapse px-3 pb-3 dim-text">—</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="side-card position-sticky top-0">
+            <div class="feature">
+              <i class="bi bi-building"></i>
+              <div>
+                <h6>450 m2</h6>
+                <small>Total Flat Space</small>
+              </div>
+            </div>
+            <div class="feature">
+              <i class="bi bi-file-earmark-text"></i>
+              <div>
+                <h6>Contract</h6>
+                <small>Contract Ready</small>
+              </div>
+            </div>
+            <div class="feature">
+              <i class="bi bi-cash-stack"></i>
+              <div>
+                <h6>Payment</h6>
+                <small>Payment Process</small>
+              </div>
+            </div>
+            <div class="feature">
+              <i class="bi bi-shield-check"></i>
+              <div>
+                <h6>Safety</h6>
+                <small>24/7 Under Control</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Best Deal Section -->
+  <section class="best-area">
+    <div class="container">
+      <div class="row align-items-start g-4">
+        <div class="col-12"><div class="section-tag">BEST DEAL</div></div>
+        <div class="col-12 col-lg-5">
+          <h2 class="fw-bold mb-3">Find Your Best Deal<br/>Right Now!</h2>
+          <div class="chips d-flex gap-2 mb-4">
+            <button class="chip active">Apartment</button>
+            <button class="chip">Villa House</button>
+            <button class="chip">Penthouse</button>
+          </div>
+          <div class="stats-card shadow-soft">
+            <div class="row g-0">
+              <div class="col-12"><span class="label">Total Flat Space</span><span class="value">540 m2</span></div>
+              <div class="col-12"><span class="label">Floor number</span><span class="value">3</span></div>
+              <div class="col-12"><span class="label">Number of rooms</span><span class="value">8</span></div>
+              <div class="col-12"><span class="label">Parking Available</span><span class="value">Yes</span></div>
+              <div class="col-12"><span class="label">Payment Process</span><span class="value">Bank</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <img class="w-100 rounded-2xl shadow-soft" src="../nature/property-02.jpg" alt="Apartment"/>
+        </div>
+        <div class="col-12 col-lg-3">
+          <h6 class="fw-bold">All Info About Apartment</h6>
+          <p class="dim-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempor pack incididunt ut labore et dolore magna aliqua quasi ipsum suspendisse.</p>
+          <p class="dim-text">Swag fanny pack try-hard blue jomo ethical copper mug, succulents typewriter shaman DIY kitsch twee tailyaki fake hella venmo after messenger poutine next level humblebrag swag franzen.</p>
+          <a href="#" class="btn btn-visit d-inline-flex align-items-center mt-2"><i class="bi bi-calendar2-week"></i>Schedule a Visit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center">
+      Copyright © 2048 Villa Agency Co., Ltd. All rights reserved. Design: SOWMYA KANALA
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
